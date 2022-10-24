@@ -1,0 +1,41 @@
+.session {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-session {
+    width: 17vw;
+    height: 100vh;
+    background: #2c2e3d;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    padding: 0% 1% 0% 1%;
+}
+
+.right-session{
+    width: 83vw;
+}
+
+
+@media(max-width: 800px){
+    .left-session {
+        width: 25vw;
+    }
+    .right-session{
+        width: 75vw;
+    }
+}
+
+@media (max-width: 676px) {
+    .left-session {
+        display: none;
+    }
+    .right-session{
+        width: 100vw;
+    }
+}

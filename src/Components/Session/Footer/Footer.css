@@ -1,0 +1,15 @@
+.footer {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 2% 1% 2%;
+}
+
+.footer-policy,
+.footer-terms {
+    font-weight: bold;
+    color: #2c2e3d;
+    margin-left: 1vw;
+    cursor: pointer;
+}
