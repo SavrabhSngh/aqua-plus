@@ -7,6 +7,7 @@ import ContactPage from "@mui/icons-material/ContactPage";
 import Logout from "@mui/icons-material/Logout";
 import Login from "@mui/icons-material/Login";
 import School from "@mui/icons-material/School";
+import Https from "@mui/icons-material/Https";
 
 const GetIcons = (param) => {
   switch (param) {
@@ -28,6 +29,8 @@ const GetIcons = (param) => {
       return <Login />;
     case "School":
       return <School />;
+    case "Password":
+      return <Https />;
     default:
       return "";
   }

@@ -3,7 +3,7 @@ import { HIDE_SNACKBAR, SHOW_SNACKBAR } from "../actionTypes";
 const initialState = {
   open: false,
   autoHideDuration: 0,
-  severity: "",
+  severity: "error",
   message: "",
 };
 
