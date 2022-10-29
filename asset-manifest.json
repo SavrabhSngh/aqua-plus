@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/aqua-plus/static/css/main.83af190d.css",
+    "main.js": "/aqua-plus/static/js/main.7783c11e.js",
+    "static/js/787.3335e3e6.chunk.js": "/aqua-plus/static/js/787.3335e3e6.chunk.js",
+    "index.html": "/aqua-plus/index.html",
+    "main.83af190d.css.map": "/aqua-plus/static/css/main.83af190d.css.map",
+    "main.7783c11e.js.map": "/aqua-plus/static/js/main.7783c11e.js.map",
+    "787.3335e3e6.chunk.js.map": "/aqua-plus/static/js/787.3335e3e6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83af190d.css",
+    "static/js/main.7783c11e.js"
+  ]
+}
