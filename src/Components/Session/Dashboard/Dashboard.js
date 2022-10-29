@@ -24,7 +24,7 @@ const Dashboard = () => {
               size="medium"
               sx={{ mr: 2 }}
             >
-              <i className="fas fa-user-plus"></i>&nbsp; users
+              <i className="fas fa-user-plus"></i>&nbsp; ADD
             </Button>
             <Button variant="contained" color="primary" size="medium">
               <i className="fas fa-file-export"></i>&nbsp; Export
