@@ -44,7 +44,7 @@ const Drawer = () => {
         });
         break;
       case "Logout":
-        navigate("/");
+        navigate("/aqua-plus");
         break;
       default:
     }

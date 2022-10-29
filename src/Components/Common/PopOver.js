@@ -28,7 +28,7 @@ const PopOver = (props) => {
         props.handleClose();
         break;
       case "Logout":
-        navigate("/");
+        navigate("/aqua-plus");
         props.handleClose();
         break;
       default:
