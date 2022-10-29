@@ -2,6 +2,7 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import _ from "lodash";
+import { useNavigate } from "react-router-dom";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
@@ -15,6 +16,7 @@ import Snackbar from "../Common/Snackbar";
 import "./Signin.css";
 
 const Signin = (props) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,6 +36,8 @@ const Signin = (props) => {
         severity: "error",
         message: "Username and Password required",
       });
+    } else {
+      navigate("/session");
     }
   };
 
@@ -59,8 +63,11 @@ const Signin = (props) => {
         </div>
 
         <div className="content-right">
-          <div className="login-form">
+          <div className="login-form dflex">
             <h3>Welcome Back !</h3>
+            <p style={{ marginTop: "1%", marginBottom: "1%" }}>
+              Please login to get started
+            </p>
             <FormControl fullWidth sx={{ mt: 2 }}>
               <InputLabel htmlFor="outlined-adornment-amount">
                 Username
@@ -111,6 +118,16 @@ const Signin = (props) => {
             >
               LOG IN
             </Button>
+            <div className="dflex login-bar">
+              <hr style={{ width: "45%" }} />
+              <p>OR</p>
+              <hr style={{ width: "45%" }} />
+            </div>
+            <div className="social-login">
+              <i class="fab fa-google"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+            </div>
           </div>
         </div>
       </div>
