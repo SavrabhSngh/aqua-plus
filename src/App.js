@@ -20,7 +20,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/aqua-plus" element={<Signin />}></Route>
+        <Route exact path="/" element={<Signin />}></Route>
         <Route exact path="/session" element={<Session />}></Route>
         <Route path="*" element={<NoMatch />}></Route>
       </Routes>

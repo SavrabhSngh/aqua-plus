@@ -59,9 +59,9 @@
 }
 
 .login-form {
-    width: 70%;
+    width: 80%;
     flex-direction: column;
-    padding: 15px;
+    padding: 25px;
     border-radius: 10px;
     background: white;
     opacity: 0.7;
