@@ -8,6 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Divider } from "@mui/material";
+import PropTypes from "prop-types";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -28,28 +29,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, dob, mobile, sDate) {
-  return { name, dob, mobile, sDate };
-}
-
-const rows = [
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-  createData("Saurabh Singh", "07/06/1999", 9026472660, "24/10/2022"),
-];
-
-const DashTable = () => {
+const DashTable = (props) => {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 400 }} aria-label="customized table">
@@ -64,15 +44,23 @@ const DashTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row, index) => (
-            <StyledTableRow key={index}>
-              <StyledTableCell align="center">{index + 1}</StyledTableCell>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
+          {props.customerData?.map((row) => (
+            <StyledTableRow key={row.serialNumber}>
+              <StyledTableCell align="center">
+                {row.serialNumber}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.dob}</StyledTableCell>
-              <StyledTableCell align="center">{row.mobile}</StyledTableCell>
-              <StyledTableCell align="center">{row.sDate}</StyledTableCell>
+              <StyledTableCell component="th" scope="row">
+                {row.customerName}
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                {row.customerDOB}
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                {row.customerContactNumber}
+              </StyledTableCell>
+              <StyledTableCell align="center">
+                {row.customerJoiningDate}
+              </StyledTableCell>
               <StyledTableCell align="center">
                 <div className="action-buttons">
                   <i
@@ -99,3 +87,7 @@ const DashTable = () => {
 };
 
 export default DashTable;
+
+DashTable.propTypes = {
+  customerData: PropTypes.array,
+};

@@ -21,7 +21,7 @@ const AppBar = () => {
   return (
     <div className="drawer-header app-bar">
       <div className="appbar-left">
-        <h3>Hii, Savrabh Singh</h3>
+        <h3>Hii, {localStorage.getItem("user")}</h3>
       </div>
       <div className="appbar-right" onClick={handleAccountClick("bottom-end")}>
         <h3>{GetIcons("Account")}</h3>

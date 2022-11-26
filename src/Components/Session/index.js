@@ -44,6 +44,7 @@ const Session = (props) => {
         });
       }
     );
+    DataService.getAllCustomers();
   }, []);
 
   return (

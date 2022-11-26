@@ -1,4 +1,5 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { Divider } from "@mui/material";
@@ -9,7 +10,24 @@ import "./Dashboard.css";
 import { Box } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const result = props.customerData.filter(
+      (customer) => customer.customerId < 20
+    );
+    setData(result);
+  }, [props.customerData]);
+
+  const handleChange = (e, p) => {
+    const result = props.customerData.filter(
+      (customer) =>
+        customer.customerId > 20 * p - 20 && customer.customerId < 20 * p
+    );
+    setData(result);
+  };
+
   return (
     <div className="dashboard">
       <Card sx={{ minWidth: 275 }}>
@@ -33,7 +51,7 @@ const Dashboard = () => {
         </div>
         <Divider />
         <CardContent sx={{ padding: "2% 2% 0px 2%" }}>
-          <DashTable />
+          <DashTable customerData={data} />
           <Box
             sx={{
               pt: 3,
@@ -45,7 +63,11 @@ const Dashboard = () => {
               alignItems: "center",
             }}
           >
-            <Pagination count={10} color="primary" />
+            <Pagination
+              count={Math.ceil(props.customerData.length / 20)}
+              color="primary"
+              onChange={handleChange}
+            />
           </Box>
         </CardContent>
       </Card>
@@ -53,4 +75,10 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+const mapStateToProps = (state) => {
+  return {
+    customerData: state.CustomerDetails,
+  };
+};
+
+export default connect(mapStateToProps, {})(Dashboard);

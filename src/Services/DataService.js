@@ -5,6 +5,7 @@ import {
   clearAccountDeatils,
   saveAccountDetails,
 } from "../Store/AccounDetail/action";
+import { saveCustomerDetails } from "../Store/CustomerDetails/action";
 
 export class DataService {
   static serviceBehaviour;
@@ -54,7 +55,7 @@ export class DataService {
                 open: true,
                 autoHideDuration: 10000,
                 severity: "error",
-                message: resp.data.reason,
+                message: resp.data.message,
               })
             );
         }
@@ -69,5 +70,28 @@ export class DataService {
   static logout = () => {
     localStorage.clear();
     DataService.clearSession();
+  };
+
+  static getAllCustomers = async () => {
+    await axios
+      .get(`${process.env.REACT_APP_BASE_URL}/api/v1/customer`)
+      .then((resp) => {
+        if (resp.data.status) {
+          DataService.serviceBehaviour &&
+            DataService.serviceBehaviour.AppStore.dispatch(
+              saveCustomerDetails(resp.data.data)
+            );
+        } else {
+          DataService.serviceBehaviour &&
+            DataService.serviceBehaviour.AppStore.dispatch(
+              showSnackbar({
+                open: true,
+                autoHideDuration: 10000,
+                severity: "error",
+                message: resp.data.message,
+              })
+            );
+        }
+      });
   };
 }
