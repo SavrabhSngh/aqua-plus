@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.5936f227.css",
-    "main.js": "/static/js/main.b18b8fe2.js",
-    "static/js/787.3335e3e6.chunk.js": "/static/js/787.3335e3e6.chunk.js",
-    "index.html": "/index.html",
-    "main.5936f227.css.map": "/static/css/main.5936f227.css.map",
-    "main.b18b8fe2.js.map": "/static/js/main.b18b8fe2.js.map",
-    "787.3335e3e6.chunk.js.map": "/static/js/787.3335e3e6.chunk.js.map"
+    "main.css": "/aqua-plus/static/css/main.5936f227.css",
+    "main.js": "/aqua-plus/static/js/main.f12b5a2d.js",
+    "static/js/787.3335e3e6.chunk.js": "/aqua-plus/static/js/787.3335e3e6.chunk.js",
+    "index.html": "/aqua-plus/index.html",
+    "main.5936f227.css.map": "/aqua-plus/static/css/main.5936f227.css.map",
+    "main.f12b5a2d.js.map": "/aqua-plus/static/js/main.f12b5a2d.js.map",
+    "787.3335e3e6.chunk.js.map": "/aqua-plus/static/js/787.3335e3e6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5936f227.css",
-    "static/js/main.b18b8fe2.js"
+    "static/js/main.f12b5a2d.js"
   ]
 }
