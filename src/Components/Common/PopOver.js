@@ -29,6 +29,7 @@ const PopOver = (props) => {
         break;
       case "Logout":
         navigate("/aqua-plus");
+        DataService.logout();
         props.handleClose();
         break;
       default:

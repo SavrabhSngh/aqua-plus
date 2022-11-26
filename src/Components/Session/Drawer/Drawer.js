@@ -44,6 +44,7 @@ const Drawer = () => {
         });
         break;
       case "Logout":
+        DataService.logout();
         navigate("/aqua-plus");
         break;
       default:

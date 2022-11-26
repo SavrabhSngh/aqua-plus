@@ -5,9 +5,17 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { configureStore } from "./Store";
+import { DataService } from "./Services/DataService";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const store = configureStore();
+
+const srvcBehaviour = {
+  Mock: false,
+  AppStore: store,
+};
+
+DataService.SetServiceBehaviour(srvcBehaviour);
 
 root.render(
   <React.StrictMode>

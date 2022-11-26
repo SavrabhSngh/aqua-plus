@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import _ from "lodash";
@@ -13,12 +13,19 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { showSnackbar } from "../../Store/Snackbar/action";
 import Snackbar from "../Common/Snackbar";
+import { DataService } from "../../Services/DataService";
 import "./Signin.css";
 
 const Signin = (props) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    if (!_.isEqual(props.name, "")) {
+      navigate("/aqua-plus/session");
+    }
+  }, [props.name]);
 
   const handleChange = (key, value) => {
     if (_.isEqual(key, "username")) {
@@ -37,7 +44,10 @@ const Signin = (props) => {
         message: "Username and Password required",
       });
     } else {
-      navigate("/session");
+      DataService.login({
+        username: username,
+        password: password,
+      });
     }
   };
 
@@ -134,7 +144,14 @@ const Signin = (props) => {
     </div>
   );
 };
-export default connect(null, {
+
+function mapStateToProps(state) {
+  return {
+    name: state.AccountDetails?.name || "",
+  };
+}
+
+export default connect(mapStateToProps, {
   showSnackbar,
 })(Signin);
 
